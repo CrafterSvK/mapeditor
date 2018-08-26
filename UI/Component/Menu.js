@@ -48,4 +48,23 @@ class Menu {
             this.showed = true;
         }
     }
+
+    inFocus() {
+        let value = false;
+
+        let relMouseX = mouseX - this.x;
+        let relMouseY = mouseY - this.y;
+
+        if (
+            (relMouseX <= this.width && relMouseX >= 0) &&
+            (relMouseY <= this.height &&
+            relMouseY >= 0)
+        ) {
+            value = true;
+        } else {
+            value = false;
+        }
+
+        return value;
+    }
 }

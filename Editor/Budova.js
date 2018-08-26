@@ -33,4 +33,23 @@ class Budova {
         objects.push(this);
     }
 
+    inFocus() {
+        let value = false;
+
+        let relMouseX = mouseX - (this.x - this.width / 2);
+        let relMouseY = mouseY - (this.y - this.height / 2);
+
+        if (
+            (relMouseX <= this.width && relMouseX >= 0) &&
+            (relMouseY <= this.height &&
+            relMouseY >= 0)
+        ) {
+            value = true;
+        } else {
+            value = false;
+        }
+
+        return value;
+    }
+
 }
